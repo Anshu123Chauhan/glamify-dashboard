@@ -62,7 +62,7 @@ const Login = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className={`w-full text-gray-600 border-b border-gray-200 py-2 bg-white appearance-none focus:outline-none focus:ring-0 ${
+                className={`w-full text-gray-600 border-b border-gray-200 py-1 bg-white appearance-none focus:outline-none focus:ring-0 ${
                   errors.email ? "border-red-500" : "border-gray-300"
                 }`}
               />
@@ -77,7 +77,7 @@ const Login = () => {
                 type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className={`w-full text-gray-600 border-b border-gray-200 py-2 bg-white appearance-none focus:outline-none focus:ring-0  ${
+                className={`w-full text-gray-600 border-b border-gray-200 py-1 bg-white appearance-none focus:outline-none focus:ring-0  ${
                   errors.password ? "border-red-500" : "border-gray-300"
                 }`}
               />
@@ -107,7 +107,7 @@ const Login = () => {
             <button
               type="submit"
               disabled={loading}
-              className={`w-full p-3 my-2 border-solid border-2 border-[#b02b2b] font-bold text-white transition-all duration-200 rounded ${
+              className={`w-full p-3 my-1 border-solid border-2 border-[#b02b2b] font-bold text-white transition-all duration-200 rounded ${
                 loading
                   ? "bg-custom-radial cursor-not-allowed opacity-70"
                   : "bg-custom-radial hover:brightness-110 active:brightness-95"
@@ -116,14 +116,14 @@ const Login = () => {
               {loading ? "Logging in..." : "Login"}
             </button>
           </form>
-          <p className="my-3 text-gray-700 text-sm">
+          <p className="my-3 text-gray-400 text-sm">
             Don’t have an account?{" "}
-            <Link to="/signup" className="font-bold text-gray-600">
+            <Link to="/signup" className="font-bold text-gray-600 ml-1">
               Sign Up
             </Link>
           </p>
 
-          <p className="text-gray-500 text-xs mt-2">
+          <p className="text-gray-400 text-xs mt-2">
             By continuing, you agree to our Privacy Policy.
           </p>
         </div>

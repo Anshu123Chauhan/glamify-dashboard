@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Header from "./component/Header";
 import Sidebar from "./component/Sidebar";
 import Footer from "./component/Footer";
@@ -10,10 +15,12 @@ import Login from "./pages/Login";
 import ProtectedRoute from "./component/ProtectedRoute";
 import Signup from "./pages/Signup";
 import { ToastContainer } from "react-toastify";
+import Cookies from "js-cookie";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const token = Cookies.get("token");
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -21,20 +28,16 @@ function App() {
 
   return (
     <Router>
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
+      <ToastContainer position="top-right" autoClose={3000} />
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route
+          path="/login"
+          element={token ? <Navigate to="/dashboard" replace /> : <Login />}
+        />
+        <Route
+          path="/signup"
+          element={token ? <Navigate to="/dashboard" replace /> : <Signup />}
+        />
 
         <Route
           path="/*"
