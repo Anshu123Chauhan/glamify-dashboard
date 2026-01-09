@@ -85,7 +85,7 @@ const Signup = () => {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                className={`w-full border-b py-2 focus:outline-none focus:ring-0 ${
+                className={`w-full border-b py-1 focus:outline-none focus:ring-0 ${
                   errors.firstName ? "border-red-500" : "border-gray-300"
                 }`}
                 placeholder="First Name"
@@ -102,7 +102,7 @@ const Signup = () => {
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
-                className={`w-full border-b py-2 focus:outline-none focus:ring-0 ${
+                className={`w-full border-b py-1 focus:outline-none focus:ring-0 ${
                   errors.lastName ? "border-red-500" : "border-gray-300"
                 }`}
                 placeholder="Last Name"
@@ -120,7 +120,7 @@ const Signup = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`w-full border-b py-2 focus:outline-none focus:ring-0 ${
+                className={`w-full border-b py-1 focus:outline-none focus:ring-0 ${
                   errors.email ? "border-red-500" : "border-gray-300"
                 }`}
                 placeholder="Email"
@@ -138,7 +138,7 @@ const Signup = () => {
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
-                className={`w-full border-b py-2 focus:outline-none focus:ring-0 ${
+                className={`w-full border-b py-1 focus:outline-none focus:ring-0 ${
                   errors.password ? "border-red-500" : "border-gray-300"
                 }`}
                 placeholder="Password"
@@ -170,9 +170,9 @@ const Signup = () => {
             </button>
           </form>
 
-          <p className="text-center text-sm mt-3">
-            Already have an account?{" "}
-            <Link to="/login" className="font-bold text-gray-600">
+          <p className="text-center text-sm mt-3 text-gray-400">
+            Already have an account?
+            <Link to="/login" className="font-bold text-gray-600 ml-2">
               Login
             </Link>
           </p>

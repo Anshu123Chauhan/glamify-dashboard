@@ -30,14 +30,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
             Glamify
           </h2>
         </Link>
-        <nav className="flex flex-col mt-4">
+        <nav className="flex flex-col mt-1">
           {menu.map((item) => (
             <NavLink
               key={item.path}
               to={item.path}
               onClick={() => setSidebarOpen(false)}
               className={({ isActive }) =>
-                `px-6 py-3 text-left hover:bg-gray-200 transition-colors ${
+                `px-6 py-3 text-left hover:bg-gray-200 transition-colors my-1 ${
                   isActive ? "bg-gray-200 font-semibold" : ""
                 }`
               }
